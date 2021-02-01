@@ -1,0 +1,9 @@
+//lets create a schema of 'record' type
+{
+  "type": "record",
+  "namespace": "com.fretron.model",
+  "name": "Employee",
+  "fields": [{"name": "id", "type": "string"},
+    {"name": "name", "type": "string"},
+    {"name": "age", "type": "int"}]
+}
