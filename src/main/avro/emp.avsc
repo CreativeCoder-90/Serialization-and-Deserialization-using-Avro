@@ -3,7 +3,27 @@
   "type": "record",
   "namespace": "com.fretron.model",
   "name": "Employee",
-  "fields": [{"name": "id", "type": "string"},
-    {"name": "name", "type": "string"}
-    /*{"name": "age", "type": "int"}*/]
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null","string"],
+      "default": null
+    }
+//    {
+//      "name": "age",
+//      "type": ["null","int"],
+//      "default": null
+//    }
+  ]
 }
+
+//Schema Evolution
+//Backward
+//Forward
+//Backward Transit
+//Forward Transit

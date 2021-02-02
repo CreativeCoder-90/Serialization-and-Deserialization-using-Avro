@@ -11,14 +11,15 @@ public class DeserializeEmployeeObject {
     public static void main(String[] args) throws IOException {
 
         //To deserialize the employee object
-        DatumReader<Employee> employeeDatumReader=new SpecificDatumReader<Employee>(Employee.class);
+        DatumReader<Employee> employeeDatumReader= new SpecificDatumReader<>(Employee.class);
 
         //here this class reads the serialized data from file Employee.avro
-        DataFileReader<Employee> employeeDataFileReader=new DataFileReader<Employee>(
-                new File("/home/shubham-fretron/IdeaProjects/Avro_Demo/src/main/avro/Employee.avro"),employeeDatumReader);
+        DataFileReader<Employee> employeeDataFileReader= new DataFileReader<>(
+                new File("/home/shubham-fretron/IdeaProjects/Avro_Demo/src/main/avro/Employee.avro"), employeeDatumReader);
 
+        Employee emp=null;
         while(employeeDataFileReader.hasNext()){
-            Employee emp = employeeDataFileReader.next();
+            emp = employeeDataFileReader.next(emp);
             System.out.println(emp.toString());
         }
     }
