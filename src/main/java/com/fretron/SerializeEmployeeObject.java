@@ -15,7 +15,7 @@ public class SerializeEmployeeObject {
         Employee e3 = new Employee();
 
         e1.setId("101");
-        e1.setName("Tarun");
+        e1.setName("Tarun Sharma");
        // e1.setAge(24);
 
         e2.setId("102");
