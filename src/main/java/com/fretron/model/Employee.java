@@ -7,11 +7,10 @@ package com.fretron.model;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.fretron.model\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.fretron.model\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
-  @Deprecated public int age;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -23,10 +22,9 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * All-args constructor.
    */
-  public Employee(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.Integer age) {
+  public Employee(java.lang.CharSequence id, java.lang.CharSequence name) {
     this.id = id;
     this.name = name;
-    this.age = age;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -35,7 +33,6 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: return id;
     case 1: return name;
-    case 2: return age;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -45,7 +42,6 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: age = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -80,21 +76,6 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     this.name = value;
   }
 
-  /**
-   * Gets the value of the 'age' field.
-   */
-  public java.lang.Integer getAge() {
-    return age;
-  }
-
-  /**
-   * Sets the value of the 'age' field.
-   * @param value the value to set.
-   */
-  public void setAge(java.lang.Integer value) {
-    this.age = value;
-  }
-
   /** Creates a new Employee RecordBuilder */
   public static com.fretron.model.Employee.Builder newBuilder() {
     return new com.fretron.model.Employee.Builder();
@@ -118,7 +99,6 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
-    private int age;
 
     /** Creates a new Builder */
     private Builder() {
@@ -136,10 +116,6 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.age)) {
-        this.age = data().deepCopy(fields()[2].schema(), other.age);
-        fieldSetFlags()[2] = true;
-      }
     }
     
     /** Creates a Builder by copying an existing Employee instance */
@@ -152,10 +128,6 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       if (isValidValue(fields()[1], other.name)) {
         this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
-      }
-      if (isValidValue(fields()[2], other.age)) {
-        this.age = data().deepCopy(fields()[2].schema(), other.age);
-        fieldSetFlags()[2] = true;
       }
     }
 
@@ -209,37 +181,12 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       return this;
     }
 
-    /** Gets the value of the 'age' field */
-    public java.lang.Integer getAge() {
-      return age;
-    }
-    
-    /** Sets the value of the 'age' field */
-    public com.fretron.model.Employee.Builder setAge(int value) {
-      validate(fields()[2], value);
-      this.age = value;
-      fieldSetFlags()[2] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'age' field has been set */
-    public boolean hasAge() {
-      return fieldSetFlags()[2];
-    }
-    
-    /** Clears the value of the 'age' field */
-    public com.fretron.model.Employee.Builder clearAge() {
-      fieldSetFlags()[2] = false;
-      return this;
-    }
-
     @Override
     public Employee build() {
       try {
         Employee record = new Employee();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.age = fieldSetFlags()[2] ? this.age : (java.lang.Integer) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
